@@ -1,6 +1,6 @@
 from engine.Engine import Engine
-class willoughbyengine(Engine):
-    def __init__(self, last_service_date, warning_light_is_on):
+class WilloughbyEngine(Engine):
+    def __init__(self, warning_light_is_on, last_service_date):
         self.last_service_date = last_service_date
         self.warning_light_is_on = warning_light_is_on
 
