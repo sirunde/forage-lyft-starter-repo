@@ -1,4 +1,4 @@
-from Battery.Battery import Battery
+from Battery.battery import Battery
 
 class NubbinBattery(Battery):
     def __init__(self, curdate, lastdate):
@@ -6,5 +6,5 @@ class NubbinBattery(Battery):
         self.current_date = curdate
 
     def needs_service(self):
-        pass
+        return (self.current_date - self.last_service_date >= 2)
 

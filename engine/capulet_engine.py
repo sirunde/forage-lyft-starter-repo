@@ -1,11 +1,8 @@
-from engine.Engine import Engine
+from engine import Engine
 class CapuletEngine(Engine):
-    def __init__(self, warning_light_is_on, last_service_date):
-        self.last_service_date = last_service_date
-        self.warning_light_is_on = warning_light_is_on
+    def __init__(self, last_service_mileage, current_mileage):
+        self.last_service_mileage = last_service_mileage
+        self.current_mileage = current_mileage
 
     def engine_should_be_serviced(self):
-        if self.warning_light_is_on:
-            return True
-        else:
-            return False
+        return (self.current_mileage - self.last_service_mileage >=30_000)

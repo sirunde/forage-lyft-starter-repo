@@ -1,4 +1,4 @@
-from Battery.Battery import Battery
+from Battery.battery import Battery
 
 class SpindlerBattery(Battery):
     def __init__(self, curdate, lastdate):
@@ -6,6 +6,6 @@ class SpindlerBattery(Battery):
         self.current_date = curdate
 
     def needs_service(self):
-        return False
+        return (self.current_date - self.last_service_date >= 4)
 
 
